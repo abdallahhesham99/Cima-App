@@ -1,0 +1,56 @@
+<div class="py-2 d-flex justify-content-center">
+    <input [(ngModel)]="term" class="form-control my-4 w-75" type="search" placeholder="Seacrh...">
+</div>
+<div class="row my-2">
+    <div class="col-lg-3">
+        <div class="brdr w-25"></div>
+        <h2 class="py-2">Movies</h2>
+
+        <div class="brdr w-75"></div>
+
+        <ul class="my-2  list-unstyled wanted">
+            <li class="p-2"> <a (click)="getWantedList('now_playing')">Now Playing</a> </li>
+            <li class="p-2"> <a (click)="getWantedList('top_rated')">Top Rated</a> </li>
+            <li class="p-2"> <a (click)="getWantedList('popular')">Popular</a> </li>
+            <li class="p-2"> <a (click)="getWantedList('upcoming')">Upcoming</a> </li>
+
+        </ul>
+    </div>
+
+    <div class="col-lg-9">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="brdr w-100 "></div>
+
+                <ul class="  list-unstyled wanted d-flex justify-content-start align-items-center">
+
+                    <li class="p-3"> <a (click)="getByDate('day')">Day</a> </li>
+                    <li class="p-3"> <a (click)="getByDate('week')">Week</a> </li>
+                </ul>
+                <div class="brdr w-100"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div *ngFor="let movie of trendingMovie | search:term" class="col-lg-3 col-md-4  col-6 mb-4  mt-2">
+                <div [routerLink]="['/movieDetails','movie',movie.id]" class="movie">
+
+                    <img [src]="imgPrefix+movie.poster_path" class="img-fluid" alt="">
+                    <div class="overlay d-flex justify-content-center align-items-center">
+                        <a [routerLink]="['/movieDetails' , 'movie' , movie.id]"><button class="">Watch
+                                Now</button></a>
+                    </div>
+                    <div class="movie-title">
+                        <span class="h6 text-white m-0">{{movie.title}}{{movie.name}}</span>
+                    </div>
+                    <div class="movie-rating">
+                        <span>
+                            <i class="fas fa-star px-2"></i>{{movie.vote_average}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

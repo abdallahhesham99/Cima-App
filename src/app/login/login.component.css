@@ -1,0 +1,23 @@
+button {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, #0c9), to(#09f));
+  background: linear-gradient(90deg, #0c9 0, #09f);
+}
+
+.bgTransparent, .form-control, .form-control:focus {
+  background-color: transparent;
+  color: white !important;
+}
+
+.was-validated .form-control:valid,
+.form-control.is-valid,
+.was-invalidated .form-control:invalid,
+.form-control.is-invalid {
+  border-color: #ced4da !important;
+}
+
+.was-validated .form-control:invalid:focus,
+.form-control.is-invalid:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+/*# sourceMappingURL=login.component.css.map */

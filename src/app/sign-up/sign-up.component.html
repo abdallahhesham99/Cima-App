@@ -1,0 +1,47 @@
+<h2 class="form-title  mb-4 text-center">Sign up</h2>
+<div *ngIf='flag' class="alert alert-danger w-75 mx-auto">
+    <p>This e-mail is already existing</p>
+</div>
+
+<form class="w-75 mx-auto" [formGroup]='signUpForm' (ngSubmit)='getSignUpInfo(signUpForm)'>
+
+    <div class="form-group">
+        <input formControlName='first_name'
+            [class.is-valid]="signUpForm.get('first_name').errors == null && signUpForm.get('first_name').touched"
+            [class.is-invalid]="signUpForm.get('first_name').errors != null && signUpForm.get('first_name').touched"
+            class="form-control" type="text" placeholder="First Name">
+
+        <p *ngIf="signUpForm.get('first_name').errors != null && signUpForm.get('first_name').touched"
+            class="py-2 text-danger">First name is invalid</p>
+    </div>
+    <div class="form-group">
+        <input formControlName='last_name'
+            [class.is-valid]="signUpForm.get('last_name').errors == null && signUpForm.get('last_name').touched"
+            [class.is-invalid]="signUpForm.get('last_name').errors != null && signUpForm.get('last_name').touched"
+            class="form-control" type="text" placeholder="Last Name">
+
+        <p *ngIf="signUpForm.get('last_name').errors != null && signUpForm.get('last_name').touched"
+            class="py-2 text-danger">Last name is invalid</p>
+    </div>
+    <div class="form-group">
+        <input formControlName='email'
+            [class.is-valid]="signUpForm.get('email').errors == null && signUpForm.get('email').touched"
+            [class.is-invalid]="signUpForm.get('email').errors != null && signUpForm.get('email').touched"
+            class="form-control" type="email" placeholder="E-mail">
+
+        <p *ngIf="signUpForm.get('email').errors != null && signUpForm.get('email').touched" class="py-2 text-danger">
+            E-mail is invalid</p>
+    </div>
+    <div class="form-group">
+        <input formControlName='password'
+            [class.is-valid]="signUpForm.get('password').errors == null && signUpForm.get('password').touched"
+            [class.is-invalid]="signUpForm.get('password').errors != null && signUpForm.get('password').touched"
+            class="form-control" type="password" placeholder="**(First letter must be capital)">
+
+        <p *ngIf="signUpForm.get('password').errors != null && signUpForm.get('password').touched"
+            class="py-2 text-danger">Password is invalid</p>
+    </div>
+    <div class="signup-btn text-center">
+        <button [disabled]='signUpForm.invalid' type="submit">Sign up</button>
+    </div>
+</form>

@@ -1,0 +1,190 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+$bgColor: #131722;
+$bgGradient: linear-gradient(90deg, #0c9, #09f);
+$fontColor: white;
+$secFontColor: #949cb0;
+$borderColor: #a8a8a83d;
+
+.genres {
+    background: $bgGradient;
+}
+.p-color {
+    color: $secFontColor;
+}
+
+.colorGradient {
+    background: $bgGradient;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.brdr {
+    height: 2px;
+    background-color: $borderColor;
+}
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: $bgColor;
+    color: $fontColor;
+}
+
+button {
+    color: $fontColor;
+    font-weight: 500;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    outline: none !important;
+    border: none;
+    &:hover {
+        background: #0c9;
+    }
+}
+
+button:disabled {
+    background: transparent !important;
+    border: 2px solid $secFontColor;
+    color: $secFontColor;
+}
+.form-title {
+    @extend .colorGradient;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+nav {
+    background-color: $bgColor !important;
+    i {
+        font-size: 1.1rem;
+    }
+    ul {
+        .nav-link {
+            color: $fontColor !important;
+            font-size: 1.1rem;
+            font-weight: 500;
+            &:hover {
+                @extend .colorGradient;
+            }
+        }
+    }
+    .navbar-brand {
+        font-size: 2rem;
+        @extend .colorGradient;
+    }
+    .btns-left {
+        button {
+            // border-radius: 8px;
+            background: $bgGradient;
+            padding: 9px 13px;
+            &:hover {
+                background: #0c9;
+            }
+        }
+    }
+}
+
+// ============================================================
+.movie {
+    position: relative;
+    cursor: pointer;
+}
+.movie-title,
+.movie-rating {
+    position: absolute;
+    margin: 0px 5px 5px;
+
+    font-size: 1rem;
+}
+.movie-title {
+    bottom: 0;
+    width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.movie-rating {
+    right: 0;
+    bottom: 0;
+
+    i {
+        color: rgb(255, 217, 0);
+    }
+}
+.overlay {
+    background: linear-gradient(
+        180deg,
+        rgba(24, 29, 37, 0),
+        rgba(24, 29, 37, 0.75) 40%,
+        rgba(24, 29, 37, 0.8) 60%,
+        #181d25
+    );
+    position: absolute;
+    top: 85%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 500ms ease;
+}
+
+.overlay button {
+    background: $bgGradient;
+    font-size: 1rem;
+    padding: 5px 15px;
+    opacity: 0;
+    transition: opacity 500ms;
+    &:hover {
+        background: #0c9;
+    }
+}
+.movie {
+    &:hover .overlay {
+        top: 0;
+    }
+    &:hover .overlay button {
+        opacity: 1;
+    }
+    &:hover .movie-title {
+        width: 70%;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+    }
+    .h6 {
+        font-size: 0.8rem;
+    }
+}
+// ===================================
+ul.wanted {
+    margin: 0px;
+
+    @media screen and (max-width: 990px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10px;
+        text-align: center;
+    }
+    a {
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1.1rem;
+        // @media screen and (max-width: 760px) {
+        //     font-weight: 600;
+        //     font-size: 0rem;
+        // }
+
+        &:hover {
+            @extend .colorGradient;
+        }
+    }
+}
+.social-icons {
+    font-size: 1.5rem;
+    i {
+        transition: all 500ms;
+        &:hover {
+            color: #09f;
+        }
+    }
+}

@@ -1,0 +1,148 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+.genres {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, #0c9), to(#09f));
+  background: linear-gradient(90deg, #0c9 0, #09f);
+}
+
+.p-color {
+  color: #949cb0;
+}
+
+.colorGradient, .form-title, nav ul .nav-link:hover, nav .navbar-brand {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, #0c9), to(#09f));
+  background: linear-gradient(90deg, #0c9 0, #09f);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brdr {
+  height: 2px;
+  background-color: #a8a8a83d;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #131722;
+  color: white;
+}
+
+button {
+  color: white;
+  font-weight: 500;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  outline: none !important;
+  border: none;
+}
+
+button:disabled {
+  background: transparent !important;
+  border: 2px solid #949cb0;
+  color: #949cb0;
+}
+
+.form-title {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+nav {
+  background-color: #131722 !important;
+}
+
+nav i {
+  font-size: 1.1rem;
+}
+
+nav ul .nav-link {
+  color: white !important;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+nav .navbar-brand {
+  font-size: 2rem;
+}
+
+nav .btns-left button {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, #0c9), to(#09f));
+  background: linear-gradient(90deg, #0c9 0, #09f);
+  padding: 9px 13px;
+}
+
+.movie {
+  position: relative;
+  cursor: pointer;
+}
+
+.movie-title,
+.movie-rating {
+  position: absolute;
+  margin: 0px 5px 5px;
+  font-size: 1rem;
+}
+
+.movie-title {
+  bottom: 0;
+  width: 60%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-rating {
+  right: 0;
+  bottom: 0;
+}
+
+.movie-rating i {
+  color: #ffd900;
+}
+
+.overlay {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(24, 29, 37, 0)), color-stop(40%, rgba(24, 29, 37, 0.75)), color-stop(60%, rgba(24, 29, 37, 0.8)), to(#181d25));
+  background: linear-gradient(180deg, rgba(24, 29, 37, 0), rgba(24, 29, 37, 0.75) 40%, rgba(24, 29, 37, 0.8) 60%, #181d25);
+  position: absolute;
+  top: 85%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: 500ms ease;
+  transition: 500ms ease;
+}
+
+.overlay button {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, #0c9), to(#09f));
+  background: linear-gradient(90deg, #0c9 0, #09f);
+  font-size: 1rem;
+  padding: 5px 15px;
+  opacity: 0;
+  -webkit-transition: opacity 500ms;
+  transition: opacity 500ms;
+}
+
+.overlay button:hover {
+  background: #0c9;
+}
+
+.movie:hover .overlay {
+  top: 0;
+}
+
+.movie:hover .overlay button {
+  opacity: 1;
+}
+
+.movie:hover .movie-title {
+  width: 70%;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+.movie .h6 {
+  font-size: 0.8rem;
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,24 @@
+button {
+    background: linear-gradient(90deg, #0c9 0, #09f);
+}
+.bgTransparent {
+    background-color: transparent;
+    color: white !important;
+}
+.form-control {
+    @extend .bgTransparent;
+}
+
+.form-control:focus {
+    @extend .bgTransparent;
+}
+.was-validated .form-control:valid,
+.form-control.is-valid,
+.was-invalidated .form-control:invalid,
+.form-control.is-invalid {
+    border-color: #ced4da !important;
+}
+.was-validated .form-control:invalid:focus,
+.form-control.is-invalid:focus {
+    box-shadow: none;
+}

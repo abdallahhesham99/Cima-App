@@ -1,0 +1,94 @@
+<div class="row my-5">
+    <div class="col-lg-4">
+        <div class="brdr w-25"></div>
+        <h2 class="py-2">Trending <br>movies <br> to watch now</h2>
+        <p class="p-color">Most watched movies by week</p>
+        <div class="brdr w-100"></div>
+
+    </div>
+
+    <div *ngFor="let movie of trendingMovies" class="col-lg-2 col-md-4  col-6 mb-4  mt-2">
+        <div [routerLink]="['/movieDetails' , movie.media_type , movie.id]" class="movie">
+
+            <img [src]="imgPrefix+movie.poster_path" class="img-fluid" alt="">
+            <div class="overlay d-flex justify-content-center align-items-center">
+                <a [routerLink]="['/movieDetails' , movie.media_type , movie.id]"><button class="">Watch
+                        Now</button></a>
+            </div>
+            <div class="movie-title">
+                <span class="h6 text-white m-0">{{movie.title}}{{movie.name}}</span>
+            </div>
+
+            <div class="movie-rating">
+                <span>
+                    <i class="fas fa-star px-2"></i>{{movie.vote_average}}
+                </span>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="row my-5">
+    <div class="col-lg-4">
+        <div class="brdr w-25"></div>
+        <h2 class="py-2">Trending <br>TV shows <br> to watch now</h2>
+        <p class="p-color">Most watched TV shows by week</p>
+        <div class="brdr w-100"></div>
+
+    </div>
+    <div *ngFor="let tvshow of trendingTv" class="col-lg-2 col-md-4  col-6  mb-4  mt-2">
+        <div [routerLink]="['/movieDetails', tvshow.media_type, tvshow.id]" class="movie">
+
+            <img [src]="imgPrefix+tvshow.poster_path" class="img-fluid " alt="">
+            <div class="overlay d-flex justify-content-center align-items-center">
+                <a [routerLink]="['/movieDetails', tvshow.media_type , tvshow.id]"><button class="">Watch
+                        Now</button></a>
+            </div>
+            <div class="movie-title">
+                <span class="h6 text-white m-0">{{tvshow.title}}{{tvshow.name}}</span>
+            </div>
+
+            <div class="movie-rating">
+                <span>
+                    <i class="fas fa-star px-2"></i>{{tvshow.vote_average}}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row my-5">
+    <div class="col-lg-3">
+        <div class="brdr w-25"></div>
+        <h2 class="py-2">Trending <br>People</h2>
+        <p class="p-color">Most popular people by week</p>
+        <div class="brdr w-100"></div>
+
+    </div>
+
+    <div *ngFor="let person of trendingPeople" class="col-lg-3 col-md-4 col-6 mb-4 mt-2">
+        <div [routerLink]="['/movieDetails', person.media_type , person.id]" class="movie">
+
+            <img [src]="imgPrefix+person.profile_path" class="img-fluid" alt="">
+
+
+            <div class="overlay d-flex justify-content-center align-items-center">
+                <a [routerLink]="['/movieDetails', person.media_type , person.id]"><button class="">Details</button></a>
+            </div>
+            <div class="movie-title">
+                <span class="h6 text-white m-0">{{person.title}}{{person.name}}</span>
+            </div>
+
+            <div class="movie-rating">
+                <span>
+                    <i class="fas fa-star px-2"></i>{{person.popularity | number:'1.1-1'}}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

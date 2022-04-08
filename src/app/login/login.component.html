@@ -1,0 +1,36 @@
+<h2 class="form-title  mb-4 text-center">Login</h2>
+<div *ngIf='flag' class="alert alert-danger w-75 mx-auto">
+    {{errorMessage}}
+</div>
+
+<form class="w-75 mx-auto" [formGroup]='loginForm' (ngSubmit)='getLoginInfo(loginForm)'>
+    <div class="form-group">
+        <input [class.is-valid]='loginForm.get("email").errors == null && loginForm.get("email").touched'
+            [class.is-invalid]='loginForm.get("email").errors != null && loginForm.get("email").touched'
+            formControlName='email' class="form-control" type="email" placeholder="E-mail">
+        <p *ngIf="loginForm.get('email').errors != null && loginForm.get('email').touched" class="py-2 text-danger">
+            E-mail is invalid</p>
+    </div>
+    <div class="form-group">
+
+        <input [class.is-valid]='loginForm.get("password").errors == null && loginForm.get("password").touched'
+            [class.is-invalid]='loginForm.get("password").errors != null && loginForm.get("password").touched'
+            formControlName='password' class="form-control" type="password"
+            placeholder="**(First letter must be capital)">
+        <p *ngIf="loginForm.get('password').errors != null && loginForm.get('password').touched"
+            class="py-2 text-danger">
+            Password is invalid</p>
+    </div>
+
+    <div class="login-btn text-center">
+        <button [disabled]='loginForm.invalid' type="submit">Login</button>
+    </div>
+
+    <div class="text-center mt-3">
+        <h5>if you did not have an account
+            <a routerLink="/sign-up" class="colorGradient text-decoration">Sign
+                up
+            </a>
+        </h5>
+    </div>
+</form>

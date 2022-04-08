@@ -1,0 +1,47 @@
+<div *ngIf="!isPerson" class="row">
+    <div class="col-lg-4">
+        <img [src]="imgPrefix+movieDetails?.poster_path" class="img-fluid" alt="">
+
+    </div>
+
+
+    <div class="col-lg-8">
+        <h2 class="h3 my-3">{{movieDetails?.title}}{{movieDetails?.name}}</h2>
+        <p class="my-3 p-color">{{movieDetails?.tagline}}</p>
+        <span class="mr-2 genres p-2 rounded" *ngFor='let gen of movieDetails?.genres'>{{gen?.name}}</span>
+
+        <h3 class="my-4 h6">Vote : {{movieDetails?.vote_average}}</h3>
+        <h3 class="my-4 h6">Vote count : {{movieDetails?.vote_count}}</h3>
+        <h3 class="my-4 h6">Popularity : {{movieDetails?.popularity}}</h3>
+        <h3 class="my-4 h6">Release Date : {{movieDetails?.release_date}}{{movieDetails?.last_air_date}}</h3>
+
+        <p class=" mt-2 lead p-color">{{movieDetails?.overview}}</p>
+    </div>
+</div>
+
+
+
+
+
+
+<div *ngIf="isPerson" class="row">
+    <div class="col-lg-4">
+        <img [src]="imgPrefix+movieDetails?.profile_path" class="img-fluid" alt="">
+
+    </div>
+    <div class="col-lg-8">
+        <h2 class="h3 my-3">{{movieDetails?.title}}{{movieDetails?.name}}</h2>
+        <p class="my-3 p-color">{{movieDetails?.tagline}}</p>
+
+        <span class="mr-2 genres p-2 rounded">{{movieDetails?.known_for_department}}</span>
+
+
+        <h3 class="my-4 h6">Popularity: {{movieDetails?.popularity}}</h3>
+        <h3 class="my-4 h6">Birthday : {{movieDetails?.birthday}}</h3>
+        <h3 class="my-4 h6">Place of birth : {{movieDetails?.place_of_birth}}</h3>
+
+        <h3 class="my-2 h6">Biography :</h3>
+
+        <p class=" mt-2 h6 cust p-color">{{movieDetails?.biography}}</p>
+    </div>
+</div>
